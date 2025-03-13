@@ -6,10 +6,10 @@ class Order:
     
     def place_order(self):
         if self.total_amount > 0:
-            print(f"\nSiparişiniz başarıyla oluşturuldu: ")
+            print(f"\nOrder has been created successfully: ")
             print(self.customer)
-            print("\nSipariş detayları:")
+            print("\nOrder details:")
             self.cart.display_cart()
-            print(f"Toplam Tutar: {self.total_amount} TL")
+            print(f"Total Amount : {self.total_amount} TL")
         else:
-            print("\n Sepet boş, siparişiniz oluşturulamadı!")
+            print("\nBasket empty, your order could not be created!")

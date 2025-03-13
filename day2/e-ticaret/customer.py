@@ -4,4 +4,4 @@ class Customer:
         self.email = email
     
     def __str__(self):
-        return f"Müşteri: {self.name}, E-posta: {self.email}"
+        return f"Customer: {self.name}, E-mail: {self.email}"

@@ -16,7 +16,7 @@ def main():
     products = {
         "Laptop": Product(" HP 250 G10 Intel Core i5 Taşınabilir Bilgisayar", 15000, 5),
         "Phone": Product("Apple iPhone 13 128 GB Beyaz", 34000, 10),
-        "Headphones": Product("JBL Tune 520BT Multi Connect Wireless Kulaklık", 1800, 15)
+        "Headphone": Product("JBL Tune 520BT Multi Connect Wireless Kulaklık", 1800, 15)
     }
     
     while True:
@@ -31,15 +31,20 @@ def main():
         choice = input("Enter your choice: ")
         
         if choice == "1":
-            #ürün ekleme 
             print("Available products:")
             for name, product in products.items():
                 print(product)
+
             product_name = input("Enter product name: ")
+
             if product_name in products:
                 quantity = int(input("Enter quantity: "))
-                cart.add_product(products[product_name], quantity)
-                print(f"{quantity} {product_name}(s) added to cart.")
+
+                if products[product_name].stock < quantity:
+                    print(f"No stock: {products[product_name].name}")
+                else:
+                    cart.add_product(products[product_name], quantity)
+                    print(f"{quantity} {product.name}(s) added to cart.")
             else:
                 print("Invalid product name!")
         
